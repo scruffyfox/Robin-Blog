@@ -1,0 +1,22 @@
+%h3 
+	= @post.title
+	.twitter-share-button{:style => "margin-top: -7px"}
+		%a{:href => "https://alpha.app.net/intent/post/?text=#{@post.title}", :class => 'adn-button twitter-share-button', :target => '_blank', "data-type" => 'share', "data-width" => '132', "data-height" => '27', "data-text" => "#{@post.title} via @robinapp"}
+			Share on App.net
+	%script
+		(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));
+%h5
+	by 
+	Team Robin	
+	= "on " + @post.date
+= raw @post.content
+#disqus_thread
+:javascript
+	var disqus_identifier = "#{@post.url}";
+	var disqus_url = "https://blog.robinapp.net/#{@post.url}";
+	var disqus_shortname = 'robinappblog'; // required: replace example with your forum shortname
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();

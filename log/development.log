@@ -1,0 +1,49 @@
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (3.4ms)
+Compiled application.css  (0ms)  (pid 9682)
+Compiled style.css  (0ms)  (pid 9682)
+Compiled bigvideo.css  (0ms)  (pid 9682)
+Compiled jquery.js  (2ms)  (pid 9682)
+Compiled jquery_ujs.js  (19ms)  (pid 9682)
+Compiled modernizr-2.5.3.min.js  (0ms)  (pid 9682)
+Compiled application.js  (52ms)  (pid 9682)
+Completed 200 OK in 208ms (Views: 204.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /style.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /application.js - 200 OK (12ms)
+
+
+Started GET "/assets/modernizr-2.5.3.min.js?body=1" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /modernizr-2.5.3.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/bigvideo.css?body=1" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /bigvideo.css - 200 OK (2ms)
+
+
+Started GET "/assets/logo2.png" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /logo2.png - 200 OK (7ms)
+
+
+Started GET "/assets/play_badge.png" for 127.0.0.1 at 2013-09-15 16:17:10 +0100
+Served asset /play_badge.png - 200 OK (5ms)

@@ -1,0 +1,949 @@
+@-webkit-viewport {
+  width: device-width; }
+
+@-moz-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width;
+  zoom: 1.0; }
+
+@-o-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }
+
+/* MIXINS */
+/* 
+
+STORM ID RESET STYLES
+
+Based on Meyer Reset, HTML5 Boilerplate, Normalize.css and more
+
+Updated: JULY 2012
+
+*/
+/* 
+BETTER BOX MODEL. SUPPORTED IN DECENT BROWSERS AND IE8+. POLYFILL FOR IE7
+=========================================================================
+*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* 
+RESET LOADS OF STUFF
+====================
+*/
+/* Set background colour in case user-styles use a different colour */
+html,
+body {
+  background: #fff; }
+
+/* Stop unwanted automatic text resizing on some mobile devices */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* Override defaults on all elements */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, main {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+/* Display block on HTML5 elements */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+/* 
+STANDARDISE THE STYLE OF COMMON ELEMENTS
+========================================
+*/
+* {
+  text-rendering: optimizeLegibility; }
+
+strong,
+b {
+  font-weight: bold; }
+
+em,
+i {
+  font-style: italic; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+ins {
+  text-decoration: none; }
+
+mark {
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+dfn {
+  font-style: italic; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td {
+  vertical-align: top; }
+
+hr {
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects text not wrapping in FF3 
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */ }
+
+/* Addresses margin not present in IE6/7/8/9, S5, O11 */
+figure {
+  margin: 0; }
+
+/* Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4 */
+[hidden] {
+  display: none; }
+
+/* Prevents sub and sup affecting line-height in all browsers */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* 
+IMAGES
+======
+*/
+/* Improve image quality when scaled in IE7 / Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+img {
+  border: 0;
+  vertical-align: middle; }
+
+/* 
+HYPERLINKS
+==========
+*/
+/* Improves readability when focused and also mouse hovered in all browsers */
+a {
+  text-decoration: none; }
+
+a:hover,
+a:focus,
+a:active {
+  outline: 0;
+  text-decoration: none; }
+
+/* Addresses outline displayed oddly in Chrome */
+a:focus {
+  outline: thin dotted; }
+
+/* 
+CODE BLOCKS ETC
+===============
+*/
+/* Standardise code blocks */
+pre,
+code,
+kbd,
+samp,
+tt {
+  font-family: monospace;
+  line-height: 100%; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/* 
+FORM ELEMENTS
+=============
+*/
+/* Remove default appearance from inputs */
+input,
+button,
+select {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+/* Remove default appearance from search inputs in Webkit */
+input[type="search"] {
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+input[type="checkbox"] {
+  -moz-appearance: checkbox;
+  -webkit-appearance: checkbox; }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none; }
+
+/* Remove inner padding and border in FF3/4: h5bp.com/l */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ * 4. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  line-height: normal;
+  /* 4 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */ }
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/* Re-set default cursor for disabled elements */
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+/* 
+CLEARFIX 
+========
+*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+/*
+
+Client:			[Client Name]
+Version:   		1.0
+
+Author:    		StormID
+Email:    		hello@stormid.com
+Website:   		http://stormid.com/
+
+Last updated:	Feb 2012
+
+*/
+/* GLOBAL */
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+body {
+  font-size: 1em;
+  line-height: 1.6em; }
+
+body:after {
+  content: 'small';
+  display: none; }
+
+img {
+  width: 100%; }
+
+h6, h5, h4, h3, h2, h1 {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  margin: 1em 0em;
+  line-height: 1.2em; }
+
+h5 {
+  font-size: 1.2em; }
+
+h4 {
+  font-size: 1.4em;
+  font-weight: 100; }
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 100; }
+
+h2 {
+  font-size: 2.2em;
+  font-weight: 100; }
+
+h1, h1.title {
+  font-size: 2.8em;
+  font-weight: 100; }
+
+a {
+  color: #cc0000; }
+
+a:hover,
+a:focus {
+  color: #aa0000; }
+
+p {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin-bottom: 1em; }
+
+blockquote {
+  font-family: Georgia, Times New Roman, Serif;
+  font-style: oblique;
+  font-weight: 100;
+  font-size: 1em;
+  position: relative;
+  padding: 1em; }
+
+.background_image_wrap video {
+  margin-top: 80px;
+  width: 100%;
+  min-width: 1719px; }
+
+/* VISUAL STYLE */
+body {
+  position: relative; }
+
+.site {
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.container {
+  width: 100%; }
+
+header {
+  background: #fff;
+  border-bottom: 3px solid #cc0000; }
+  header .logo {
+    display: block;
+    padding: 1em 0;
+    margin: 0 auto; }
+    header .logo img {
+      width: auto;
+      margin: 0 auto;
+      display: block; }
+  header .play_button {
+    overflow: hidden; }
+    header .play_button nav {
+      overflow: hidden; }
+      header .play_button nav ul {
+        display: block;
+        overflow: hidden;
+        margin: 0 auto 1em auto; }
+        header .play_button nav ul .small_block {
+          display: block;
+          clear: both;
+          text-align: center;
+          width: 280px;
+          margin: 0 auto; }
+          header .play_button nav ul .small_block li {
+            float: left;
+            width: 50%; }
+            header .play_button nav ul .small_block li a {
+              display: block;
+              width: auto;
+              text-align: center;
+              margin: 0.5em 1em 0 0; }
+            header .play_button nav ul .small_block li a.buy_link {
+              margin: 0.5em 0.5em 0 0; }
+            header .play_button nav ul .small_block li a.play_link {
+              margin: 0.5em 0 0 0.5em; }
+
+.background_image_wrap {
+  overflow: hidden; }
+
+.background_image {
+  width: 100%;
+  min-width: 2200px; }
+
+.promo_area {
+  background: url(../images/blackfade.png) repeat-x bottom;
+  overflow: hidden;
+  border-bottom: 3px solid #cc0000;
+  width: 100%;
+  min-height: 500px;
+  overflow: hidden; }
+  .promo_area .container {
+    overflow: hidden; }
+  .promo_area .intro {
+    margin: 1em;
+    text-align: center;
+    overflow: hidden; }
+    .promo_area .intro h1 {
+      font-size: 4em;
+      font-weight: 400;
+      color: #fff;
+      text-shadow: 0px 2px 2px #000000;
+      filter: dropshadow(color=black, offx=0, offy=1); }
+    .promo_area .intro h4 {
+      line-height: 1.6em;
+      font-weight: 400;
+      color: #fff;
+      text-shadow: 0px 2px 2px #000000;
+      filter: dropshadow(color=black, offx=0, offy=1); }
+    .promo_area .intro img {
+      width: auto; }
+  .promo_area .promo_screens {
+    margin: 0 1em;
+    bottom: 0;
+    position: relative; }
+
+.app_store_link {
+  background: #c00;
+  padding: 1em;
+  overflow: hidden; }
+  .app_store_link .icon_promo {
+    clear: both;
+    display: block;
+    margin: 2em 0;
+    overflow: hidden; }
+  .app_store_link p {
+    color: #fff;
+    margin: 1em 0;
+    text-align: center; }
+  .app_store_link a {
+    margin-left: 10px; }
+  .app_store_link img {
+    float: left;
+    width: auto; }
+
+.CTA {
+  overflow: visible;
+  clear: both;
+  position: relative;
+  z-index: 999;
+  margin: -23px 0; }
+  .CTA p {
+    margin: 0;
+    padding: 0; }
+    .CTA p a {
+      display: block;
+      width: 129px;
+      height: 45px;
+      margin: 0 auto 0 auto; }
+      .CTA p a img {
+        width: 129px; }
+
+.features {
+  background: #cc0000 url(../images/lines.png) repeat;
+  overflow: hidden;
+  padding: 2em 2em 2em 2em; }
+  .features li {
+    font-size: 1.2em;
+    font-weight: 100;
+    padding: 1em 0;
+    color: #fff;
+    clear: both; }
+    .features li .icon {
+      width: 60px;
+      margin-right: 20px;
+      display: block;
+      float: left; }
+    .features li img {
+      width: auto; }
+    .features li p {
+      margin: 0 20px 0 80px;
+      line-height: 1.6em; }
+
+.main, .testimonials {
+  background: #f2f4f8;
+  overflow: hidden;
+  padding: 1em; }
+
+.promo_nugget {
+  position: relative;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #ccc;
+  clear: both; }
+  .promo_nugget .promo_image {
+    display: block;
+    position: relative;
+    z-index: 10;
+    padding: 10px;
+    width: 50%;
+    margin: inherit auto;
+    float: left; }
+    .promo_nugget .promo_image .video_phone {
+      display: none; }
+    .promo_nugget .promo_image img {
+      position: relative; }
+  .promo_nugget .promo_info {
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+    width: 50%;
+    padding: 10px; }
+
+.promo_nugget:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.promo_nugget.right .promo_image {
+  float: right; }
+
+.testimonials {
+  overflow: hidden; }
+  .testimonials .testimonial {
+    overflow: hidden;
+    margin: 2em 2.5%; }
+    .testimonials .testimonial .quote {
+      display: block;
+      border: 1px solid #ddd;
+      border-radius: 5px; }
+      .testimonials .testimonial .quote blockquote {
+        line-height: 1.6em;
+        text-align: center;
+        background: #eee;
+        position: relative; }
+      .testimonials .testimonial .quote blockquote:before, .testimonials .testimonial .quote blockquote:after {
+        content: " ";
+        position: absolute;
+        top: 100%;
+        left: 20px;
+        display: block;
+        height: 0;
+        width: 0;
+        border: 12px solid transparent;
+        border-top: 12px solid #ddd;
+        z-index: 20; }
+      .testimonials .testimonial .quote blockquote:after {
+        left: 22px;
+        border: 10px solid transparent;
+        border-top: 10px solid #eee; }
+    .testimonials .testimonial .user {
+      display: block;
+      border-top: none;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+      padding-top: 10px; }
+      .testimonials .testimonial .user img {
+        height: 40px;
+        width: 40px;
+        float: left;
+        margin: 0.5em;
+        border-radius: 100%;
+        padding: 2px;
+        border: 1px solid #ccc; }
+      .testimonials .testimonial .user h5 {
+        display: block;
+        float: left;
+        margin: 1em 0.5em 0.5em 0.5em;
+        font-weight: normal;
+        font-size: 1em; }
+        .testimonials .testimonial .user h5 a {
+          color: #cc0000;
+          font-style: oblique; }
+
+footer {
+  background: #333; }
+  footer p {
+    color: #fff;
+    margin: 0;
+    padding: 1em 0;
+    text-align: center; }
+  footer .logo {
+    display: block;
+    float: left;
+    margin: 0.5em; }
+    footer .logo img {
+      width: 60px; }
+  footer p img {
+    width: 40px;
+    border-radius: 100%;
+    margin: 0 5px;
+    padding: 2px;
+    border: 1px solid #ccc; }
+
+/*PARALARALAX*/
+.phone {
+  display: block;
+  position: relative;
+  margin: 0 auto; }
+  .phone img {
+    position: relative;
+    z-index: 20;
+    max-width: 368px; }
+
+.phone_background {
+  background: url(../images/stream/Small_Stream.png) no-repeat;
+  display: block;
+  width: 142px;
+  height: 220px;
+  position: absolute;
+  top: 70px;
+  left: 95px;
+  z-index: 10; }
+
+.image_scroller_background {
+  background: url(../img/fox_small.jpg) no-repeat;
+  display: block;
+  width: 142px;
+  height: 220px;
+  position: absolute;
+  top: 70px;
+  left: 95px;
+  z-index: 0; }
+
+/* BLOG */
+aside.archive {
+  margin-bottom: 2em; }
+  aside.archive ul {
+    border-top: 1px solid #ccc; }
+  aside.archive li {
+    border-bottom: 1px solid #ccc; }
+    aside.archive li a {
+      line-height: 2.5em;
+      display: block;
+      text-indent: 1em; }
+    aside.archive li a:hover {
+      background: #eee; }
+
+section.post .twitter-share-button {
+  padding-top: 0.5em; }
+section.post h2 {
+  margin: 1em 0 1em 0; }
+section.post ul, section.post ol {
+  margin-bottom: 1em; }
+
+@media (min-width: 30em) {
+  .promo_nugget {
+    position: relative;
+    display: block; }
+    .promo_nugget .promo_image {
+      width: 45%;
+      margin-right: 5%;
+      float: left;
+      padding: 0; }
+    .promo_nugget .promo_info {
+      overflow: hidden;
+      width: 50%;
+      border: none;
+      margin: 0; }
+
+  blockquote {
+    font-size: 1.2em; }
+
+  blockquote:before {
+    left: -60px;
+    top: 30px; } }
+@media (min-width: 37.5em) {
+  header {
+    overflow: hidden;
+    position: relative; }
+    header .logo {
+      float: left;
+      margin: 0; }
+      header .logo img {
+        margin: 0 0 0 2em;
+        width: 60%; }
+    header .play_button {
+      margin-top: 0.3em;
+      margin-right: 2em;
+      float: right; }
+      header .play_button nav ul {
+        margin: 0.5em 0 0 0; }
+        header .play_button nav ul .small_block {
+          clear: none;
+          display: inline; }
+          header .play_button nav ul .small_block li {
+            width: auto; }
+            header .play_button nav ul .small_block li a {
+              margin: 1em 1em 0 0; }
+      header .play_button p {
+        display: block; }
+
+  .promo_area .logo {
+    float: left;
+    margin: 0; }
+    .promo_area .logo img {
+      margin: 0 0 0 5%; }
+
+  .promo_area .intro {
+    width: 70%;
+    margin: 2em auto 0 auto; }
+
+  .promo_area .promo_screens {
+    width: 70%;
+    margin: 0 auto 0 auto; }
+    .promo_area .promo_screens .phone {
+      width: auto; }
+      .promo_area .promo_screens .phone img {
+        width: 540px; }
+
+  .features ul {
+    width: 50%;
+    float: left; }
+
+  .main, .testimonials {
+    margin: 0;
+    overflow: hidden; }
+    .main h2, .testimonials h2 {
+      margin: 0 2.5% 1em 2.5%; }
+
+  .testimonials .testimonial {
+    width: 45%;
+    float: left; }
+
+  .app_store_link .icon_promo {
+    width: 20%;
+    margin: 0 2.5%;
+    padding: 2em 1em;
+    display: block;
+    float: left;
+    clear: none; }
+    .app_store_link .icon_promo img {
+      width: 40%;
+      margin: 0 auto;
+      float: none;
+      display: block; }
+    .app_store_link .icon_promo p {
+      margin-bottom: 0; }
+
+  h1.title {
+    margin: 1em 2.5% 2em 2.5%; }
+
+  .testimonials h1.title {
+    margin: 0em 2.5% 0em 2.5%; }
+
+  .promo_nugget {
+    float: left;
+    width: 95%;
+    margin: 0 2.5% 4em 2.5%;
+    padding-bottom: 4em;
+    position: relative; }
+    .promo_nugget .promo_image {
+      width: 30%;
+      float: left; }
+    .promo_nugget .promo_info {
+      width: 65%;
+      float: left; } }
+@media (min-width: 48em) {
+  body:after {
+    content: 'large';
+    display: none; }
+
+  header .intro {
+    clear: both;
+    width: 25%;
+    float: left; }
+
+  h1 {
+    font-size: 4em; }
+
+  .features ul {
+    width: 40%;
+    margin: 0 5%;
+    float: left; }
+
+  .promo_nugget {
+    padding-bottom: 0;
+    margin-bottom: -3em;
+    border-bottom: none; }
+    .promo_nugget .promo_image {
+      width: 323px;
+      height: 430px;
+      float: left;
+      margin-left: 2em;
+      position: relative;
+      border-bottom: 1px solid #ccc; }
+      .promo_nugget .promo_image .video_phone {
+        top: 70px;
+        left: 16px;
+        position: absolute;
+        display: block;
+        height: 360px;
+        width: 290px;
+        overflow: hidden;
+        background: #cc0000; }
+      .promo_nugget .promo_image img {
+        display: none; }
+    .promo_nugget .screen_1 {
+      background: url("../images/cropped-screenshot-1.png"); }
+    .promo_nugget .screen_2 {
+      background: url("../images/cropped-screenshot-2.png"); }
+    .promo_nugget .screen_3 {
+      background: url("../images/cropped-screenshot-3.png"); }
+    .promo_nugget .screen_4 {
+      background: url("../images/cropped-screenshot-4.png"); }
+    .promo_nugget .promo_info {
+      margin-top: 8em;
+      width: auto;
+      float: none; }
+
+  .testimonials {
+    padding-top: 4em; }
+    .testimonials .testimonial {
+      padding: 0;
+      margin: 2em 2.5%; }
+
+  .phone {
+    width: 720px;
+    display: block;
+    position: relative; }
+    .phone img {
+      max-width: none; }
+
+  .phone_background {
+    background: url(../images/stream/Full_Stream.png);
+    display: block;
+    width: 200px;
+    height: 329px;
+    position: absolute;
+    top: 117px;
+    left: 146px; }
+
+  .image_scroller_background {
+    background: url(../img/fox_large.jpg);
+    display: block;
+    width: 200px;
+    height: 329px;
+    position: absolute;
+    top: 117px;
+    left: 146px; }
+
+  /*BLOG*/
+  aside.archive {
+    width: 30%;
+    margin: 0em 2.5%;
+    float: left; }
+
+  section.post {
+    width: 60%;
+    margin: 0 2.5%;
+    float: left; }
+    section.post .twitter-share-button {
+      float: right;
+      padding-top: 0.5em; } }
+@media (min-width: 60em) {
+  .promo_area .intro {
+    float: left;
+    width: 27.5%;
+    margin: 2em 2.5% 2em 5%;
+    text-align: left; }
+  .promo_area .promo_screens {
+    float: left;
+    width: 57.5%;
+    height: 100%;
+    margin: 2em 5% 0 2.5%;
+    position: relative;
+    bottom: 0; }
+    .promo_area .promo_screens img {
+      vertical-align: bottom; }
+
+  h1 {
+    font-size: 3em; } }
+@media (min-width: 75em) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto; } }
+@media (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 768px), (-o-min-device-pixel-ratio: 3 / 2) and (min-width: 768px), (min--moz-device-pixel-ratio: 1.5) and (min-width: 768px), (min-device-pixel-ratio: 1.5) and (min-width: 768px), (min-resolution: 140dpi) and (min-width: 768px) {
+  /* HI RES AND 768PX OR MORE WIDE */ }
+
+.twitter-share-button
+{
+  float: right;
+}
+
+code {
+  font-family: courier new, serif;
+  line-height: 1.5;
+  font-size: 13px;
+  background-color:hsla(0,100%,50%,0.05);
+  color:#D20;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.code pre
+{
+    font-family: courier new, serif;
+    font-size:14px;
+}
+
+#disqus_thread
+{
+  border-top: 1px solid #dedede;
+  margin-top: 20px;
+  padding-top:20px;
+}
+
+#disqus_thread #footer
+{
+  display: none;
+}

@@ -1,0 +1,7 @@
+This has been requested (and i'm not surprised) by quite a few people since the initial launch of Robin, that it get ported for Twitter and every time It has been asked, and i've given the same answer every time. No.
+
+We've come a long way since the start of App.net, and the potential that the API carries is huge. Twitter's API is just not following the same direction. They started by alienating their developers by forcing a 100k token limit unless "approved" (which apps like tweetbot dont even have), and forced design guidlines for apps, which is just not going to happen for Robin.
+
+The market on Twitter is very different to the market on App.net, you can see just by Falcon Pro and how they hit their 100k token limit after only 60k sales of their app which means probably 40k of their users have pirated the app, using up valuable tokens for legitimate users.
+
+As a developer, it is always in your best interest to expand market, but one must also stick to their word and principles. Robin is an App.net client. Always has been and always will. This also brings me on to the second most popular question, "can you port Robin to X", again, Robin is an Android client and will never be ported to Black berry or any other platform. It's hard enough as it is supporting over 2000 devices on Android, let alone a completely different platform which is subject to different UX practicies and bugs.
